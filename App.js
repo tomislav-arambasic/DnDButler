@@ -2,7 +2,7 @@ import * as React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-import HomeScreen from './src/screens/HomeScreen';
+import StatsScreen from './src/screens/StatsScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
@@ -17,7 +17,7 @@ export default function App() {
 
             if (route.name === 'Profile') {
               iconName = 'person-circle-outline';
-            } else if (route.name === 'Home') {
+            } else if (route.name === 'Stats') {
               iconName = 'ios-list';
             }
 
@@ -26,11 +26,11 @@ export default function App() {
           },
         })}
         tabBarOptions={{
-          activeTintColor: 'tomato',
+          activeTintColor: 'gold',
           inactiveTintColor: 'gray',
         }}>
+        <Tab.Screen name="Stats" component={StatsScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
-        <Tab.Screen name="Home" component={HomeScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

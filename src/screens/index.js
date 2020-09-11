@@ -1,2 +1,2 @@
-export {HomeScreen} from './HomeScreen';
+export {StatsScreen} from './StatsScreen';
 export {ProfileScreen} from './ProfileScreen';

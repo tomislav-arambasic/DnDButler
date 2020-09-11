@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, ImageBackground, StyleSheet, Text} from 'react-native';
+import 'react-native-gesture-handler';
+import {images} from '../assets';
+import {ScrollView} from 'react-native-gesture-handler';
 
 export class MainStats extends Component {
   static propTypes = {};
@@ -8,66 +10,151 @@ export class MainStats extends Component {
   render() {
     return (
       <View style={styles.mainStatsContainer}>
-        <View style={styles.stats}>
-          <View style={styles.row}>
-            <Text style={styles.title}>Cleric Name</Text>
+        <ScrollView>
+          <View style={styles.cardRow}>
+            <View style={styles.statContainer}>
+              <View style={styles.statDetail}>
+                <Text style={styles.bold}>Strenght</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Score</Text>
+                <Text>1</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Modifier</Text>
+                <Text>-5</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Save</Text>
+                <Text>-5</Text>
+              </View>
+            </View>
           </View>
-          <View style={styles.row}>
-            <View style={styles.stat}>
-              <Text style={styles.statTitle}>Initiative</Text>
-              <Text>+5</Text>
-            </View>
-            <View style={styles.stat}>
-              <Text style={styles.statTitle}>HP</Text>
-              <Text>30</Text>
-            </View>
-            <View style={styles.stat}>
-              <Text style={styles.statTitle}>Speed</Text>
-              <Text>30</Text>
+          <View style={styles.cardRow}>
+            <View style={styles.statContainer}>
+              <View style={styles.statDetail}>
+                <Text style={styles.bold}>Inteligence</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Score</Text>
+                <Text>1</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Modifier</Text>
+                <Text>-5</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Save</Text>
+                <Text>-5</Text>
+              </View>
             </View>
           </View>
-        </View>
+          <View style={styles.cardRow}>
+            <View style={styles.statContainer}>
+              <View style={styles.statDetail}>
+                <Text style={styles.bold}>Dexterity</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Score</Text>
+                <Text>1</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Modifier</Text>
+                <Text>-5</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Save</Text>
+                <Text>-5</Text>
+              </View>
+            </View>
+          </View>
+          <View style={styles.cardRow}>
+            <View style={styles.statContainer}>
+              <View style={styles.statDetail}>
+                <Text style={styles.bold}>Wisdom</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Score</Text>
+                <Text>1</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Modifier</Text>
+                <Text>-5</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Save</Text>
+                <Text>-5</Text>
+              </View>
+            </View>
+          </View>
+          <View style={styles.cardRow}>
+            <View style={styles.statContainer}>
+              <View style={styles.statDetail}>
+                <Text style={styles.bold}>Constitution</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Score</Text>
+                <Text>1</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Modifier</Text>
+                <Text>-5</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Save</Text>
+                <Text>-5</Text>
+              </View>
+            </View>
+          </View>
+          <View style={styles.cardRow}>
+            <View style={styles.statContainer}>
+              <View style={styles.statDetail}>
+                <Text style={styles.bold}>Charisma</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Score</Text>
+                <Text>1</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Modifier</Text>
+                <Text>-5</Text>
+              </View>
+              <View style={styles.statDetail}>
+                <Text>Save</Text>
+                <Text>-5</Text>
+              </View>
+            </View>
+          </View>
+        </ScrollView>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  mainStatsContainer: {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    justifyContent: 'center',
-    paddingBottom: 30,
+  scrollContainer: {
+    justifyContent: 'space-between',
+    marginTop: 80,
+    paddingBottom: 80,
   },
-  row: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  stats: {
+  cardRow: {
     height: 100,
-    width: 250,
-    backgroundColor: '#fff',
-    borderRadius: 10,
-    padding: 10,
-    marginTop: 50,
-    justifyContent: 'space-between',
+    display: 'flex',
+    borderBottomColor: '#ddd',
+    borderBottomWidth: 0.5,
   },
-  title: {
-    fontWeight: 'bold',
-    alignSelf: 'center',
-  },
-  stat: {
+  statContainer: {
     flex: 1,
-    height: 40,
-    width: 50,
-    justifyContent: 'space-between',
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  statDetail: {
+    flex: 1,
+    backgroundColor: '#fff',
+    justifyContent: 'space-around',
     alignItems: 'center',
   },
-  statTitle: {
-    fontSize: 15,
+  bold: {
     fontWeight: 'bold',
   },
 });

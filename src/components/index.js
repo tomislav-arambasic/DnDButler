@@ -1,3 +1,3 @@
-const {default: MainStats} = require('./MainStats');
+const {default: PlayerStats} = require('./PlayerStats');
 
-export {default as MainStats} from './MainStats';
+export {default as PlayerStats} from './PlayerStats';
