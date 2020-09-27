@@ -2,9 +2,9 @@ import * as React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-import StatsScreen from './src/screens/StatsScreen';
-import ProfileScreen from './src/screens/ProfileScreen';
-import InventoryScreen from './src/screens/InventoryScreen';
+import StatsScreen from './src/modules/player/screens/StatsScreen';
+import InventoryScreen from './src/modules/player/screens/InventoryScreen';
+import Player from './src/modules/player';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,7 +16,7 @@ export default function App() {
           tabBarIcon: ({focused, color, size}) => {
             let iconName;
 
-            if (route.name === 'Profile') {
+            if (route.name === 'Character') {
               iconName = 'person-circle-outline';
             } else if (route.name === 'Stats') {
               iconName = 'ios-list';
@@ -32,9 +32,12 @@ export default function App() {
           activeTintColor: 'gold',
           inactiveTintColor: 'gray',
         }}>
+        <Tab.Screen
+          name="Character"
+          component={Player.ProfileStackNavigation}
+        />
         <Tab.Screen name="Inventory" component={InventoryScreen} />
         <Tab.Screen name="Stats" component={StatsScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
