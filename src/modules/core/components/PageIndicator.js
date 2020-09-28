@@ -51,7 +51,13 @@ export default class PageIndicator extends Component {
     const {currentPosition} = this.state;
 
     return (
-      <View style={{width: '50%', alignSelf: 'center'}}>
+      <View
+        style={{
+          height: 50,
+          width: '50%',
+          alignSelf: 'center',
+          justifyContent: 'center',
+        }}>
         <StepIndicator
           customStyles={customStyles}
           currentPosition={currentPosition}

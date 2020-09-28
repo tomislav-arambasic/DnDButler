@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Alert, Text, Button} from 'react-native';
+import {View, StyleSheet, Button} from 'react-native';
 import 'react-native-gesture-handler';
-import {CharacterProfile, CharacterCreator} from '../components';
+import {CharacterProfile} from '../components';
 
 class ProfileScreen extends Component {
   render() {

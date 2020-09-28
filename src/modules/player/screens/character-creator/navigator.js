@@ -1,48 +1,54 @@
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import ProfileScreen from '../screens/ProfileScreen';
-import InventoryScreen from '../screens/InventoryScreen';
+import BasicInfoScreen from './BasicInfoScreen';
+import InventoryScreen from '../InventoryScreen';
 
-const ProfileStack = createStackNavigator();
+const CharacterCreatorStack = createStackNavigator();
 
-export default function ProfileStackNavigation() {
+export default function CharacterCreatorStackNavigator() {
+  const headerProps = {
+    headerShown: true,
+    headerTitle: 'Basic info',
+    headerTitleAlign: 'center',
+  };
+
   return (
-    <ProfileStack.Navigator>
-      <ProfileStack.Screen
+    <CharacterCreatorStack.Navigator>
+      <CharacterCreatorStack.Screen
         name="Profile"
-        component={ProfileScreen}
+        component={BasicInfoScreen}
         options={{headerShown: false}}
       />
-      <ProfileStack.Screen
+      <CharacterCreatorStack.Screen
         name="CreatorBasicInfo"
-        component={InventoryScreen}
-        options={{headerShown: true}}
+        component={BasicInfoScreen}
+        options={headerProps}
       />
-      <ProfileStack.Screen
+      <CharacterCreatorStack.Screen
         name="CreatorStats"
         component={InventoryScreen}
         options={{headerShown: true}}
       />
-      <ProfileStack.Screen
+      <CharacterCreatorStack.Screen
         name="CreatorSkills"
         component={InventoryScreen}
         options={{headerShown: true}}
       />
-      <ProfileStack.Screen
+      <CharacterCreatorStack.Screen
         name="CreatorArchetype"
         component={InventoryScreen}
         options={{headerShown: true}}
       />
-      <ProfileStack.Screen
+      <CharacterCreatorStack.Screen
         name="CreatorHitPoints"
         component={InventoryScreen}
         options={{headerShown: true}}
       />
-      <ProfileStack.Screen
+      <CharacterCreatorStack.Screen
         name="CreatorEquipment"
         component={InventoryScreen}
         options={{headerShown: true}}
       />
-    </ProfileStack.Navigator>
+    </CharacterCreatorStack.Navigator>
   );
 }

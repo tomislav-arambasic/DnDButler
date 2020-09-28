@@ -1,3 +1,3 @@
-import PlayerNavigation from './navigation';
+import PlayerNavigator from './screens/navigator';
 
-export default PlayerNavigation;
+export {PlayerNavigator};
